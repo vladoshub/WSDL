@@ -56,24 +56,23 @@ public class HumanDaoImpl implements HumanDao {
             CriteriaBuilder builder = em.getCriteriaBuilder();
             CriteriaQuery<Human> query = builder.createQuery(Human.class);
             Root<Human> root = query.from(Human.class);
-            EntityType<Human> Human_ = root.getModel();
-            query.select(root).where(getPredicate(searchCriteria,builder,root,Human_));
+            query.select(root).where(getPredicate(searchCriteria,builder,root));
             return em.createQuery(query).getResultList();
         } catch (Exception e) {
             return null;
         }
     }
 
-    public Predicate getPredicate(SearchCriteria searchCriteria,CriteriaBuilder builder,Root<Human> root, EntityType<Human> Human_){
+    public Predicate getPredicate(SearchCriteria searchCriteria,CriteriaBuilder builder,Root<Human> root){
         Predicate where = builder.conjunction();
         if(searchCriteria.getName()!=null) {
-            where = builder.and(where,builder.like(root.get(Human_.getSingularAttribute("name",String.class)), searchCriteria.getName() + "%"));
+            where = builder.and(where,builder.like(root.get(Human_.name), searchCriteria.getName() + "%"));
         }
         if(searchCriteria.getAge()!=null) {
-           where = builder.and(where,builder.equal(root.get(Human_.getSingularAttribute("age")),searchCriteria.getAge()));
+           where = builder.and(where,builder.equal(root.get(Human_.age),searchCriteria.getAge()));
         }
         if(searchCriteria.getGrowth()!=null) {
-            where = builder.and(where,builder.equal(root.get(Human_.getSingularAttribute("growth")),searchCriteria.getGrowth()));
+            where = builder.and(where,builder.equal(root.get(Human_.growth),searchCriteria.getGrowth()));
         }
         return  where;
 

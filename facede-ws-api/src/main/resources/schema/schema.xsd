@@ -2,7 +2,7 @@
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
             version="1.0"
-            targetNamespace="http://webservice.jaxrs.mmtr.ru/">
+            targetNamespace="http://facadeapi.jaxrs.mmtr.ru/">
 
 
     <xsd:complexType name="humanDtoWs">

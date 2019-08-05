@@ -1,10 +1,10 @@
-package ru.mmtr.jaxrs.converters;
+package ru.mmtr.jaxrs.facade.converter;
 
 import ru.mmtr.jaxrs.dto.HumanDto;
-import ru.mmtr.jaxrs.model.Human;
+import ru.mmtr.jaxrs.facadeapi.CriteriaSearch;
+import ru.mmtr.jaxrs.facadeapi.HumanDtoWs;
 import ru.mmtr.jaxrs.searchcriteria.SearchCriteria;
-import ru.mmtr.jaxrs.webservice.CriteriaSearch;
-import ru.mmtr.jaxrs.webservice.HumanDtoWs;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions
         xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-        xmlns:tns="http://webservice.jaxrs.mmtr.ru/"
+        xmlns:tns="http://facadeapi.jaxrs.mmtr.ru/"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns="http://schemas.xmlsoap.org/wsdl/"
-        targetNamespace="http://webservice.jaxrs.mmtr.ru/">
+        targetNamespace="http://facadeapi.jaxrs.mmtr.ru/">
     <types>
         <xsd:schema>
-            <xsd:import namespace="http://webservice.jaxrs.mmtr.ru/"
+            <xsd:import namespace="http://facadeapi.jaxrs.mmtr.ru/"
                         schemaLocation="../types/siteAlertTypeDefs.xsd"/>
         </xsd:schema>
     </types>
@@ -38,13 +38,13 @@
     <binding name="FacadePortBinding" type="tns:Facade">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <operation name="addHuman">
-            <soap:operation soapAction="http://webservice.jaxrs.mmtr.ru/FacadeService/addHuman"/>
+            <soap:operation soapAction="http://facadeapi.jaxrs.mmtr.ru/FacadeService/addHuman"/>
             <input>
                 <soap:body use="literal"/>
             </input>
         </operation>
         <operation name="getHumanDto">
-            <soap:operation soapAction="http://webservice.jaxrs.mmtr.ru/FacadeService/addHuman"/>
+            <soap:operation soapAction="http://facadeapi.jaxrs.mmtr.ru/FacadeService/addHuman"/>
             <input>
                 <soap:body use="literal"/>
             </input>

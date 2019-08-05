@@ -22,6 +22,18 @@
         </dependency>
         <dependency>
             <groupId>MMTR</groupId>
+            <artifactId>facede-ws-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>MMTR</groupId>
+            <artifactId>facede-ws</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>MMTR</groupId>
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>ejb</type>
@@ -71,6 +83,13 @@
                             <bundleFileName>web.war</bundleFileName>
                             <contextRoot>/</contextRoot>
                         </webModule>
+                        <webModule>
+                            <groupId>MMTR</groupId>
+                            <artifactId>facede-ws</artifactId>
+                            <uri>facede-ws.war</uri>
+                            <bundleFileName>facede-ws.war</bundleFileName>
+                            <contextRoot>facede/</contextRoot>
+                        </webModule>
                         <ejbModule>
                             <groupId>MMTR</groupId>
                             <artifactId>service</artifactId>
@@ -80,6 +99,12 @@
                             <groupId>MMTR</groupId>
                             <artifactId>dao</artifactId>
                             <bundleFileName>dao.jar</bundleFileName>
+                            <includeInApplicationXml>true</includeInApplicationXml>
+                        </JarModule>
+                        <JarModule>
+                            <groupId>MMTR</groupId>
+                            <artifactId>facede-ws-api</artifactId>
+                            <bundleFileName>facede-ws-api.jar</bundleFileName>
                             <includeInApplicationXml>true</includeInApplicationXml>
                         </JarModule>
                         <JarModule>

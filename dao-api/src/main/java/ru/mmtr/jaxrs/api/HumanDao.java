@@ -16,5 +16,5 @@ public interface HumanDao {
     public List<Human> getHumans();
     public List<Human> getHumansByParams(SearchCriteria criteriaSearch);
     public void addHuman(Human human);
-    public Predicate getPredicate(SearchCriteria searchCriteria, CriteriaBuilder builder,Root<Human> root, EntityType<Human> entityType);
+    public Predicate getPredicate(SearchCriteria searchCriteria, CriteriaBuilder builder,Root<Human> root);
 }

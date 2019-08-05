@@ -52,7 +52,7 @@
                 <version>1.12</version>
                 <configuration>
                     <wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
-                    <packageName>ru.mmtr.jaxrs.webservice</packageName>
+                    <packageName>ru.mmtr.jaxrs.facadeapi</packageName>
                     <keep>true</keep>
                     <bindingFiles>${basedir}/src/main/resources/schema/bindings.xml</bindingFiles>
                     <sourceDestDir>${basedir}/target/generated/src/main/java</sourceDestDir>
