@@ -9,23 +9,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="serviceapi" />
-        <module name="facede-ws" />
-        <module name="facedewsapi" />
-        <module name="daoapi" />
         <module name="dao-api" />
-        <module name="service-api" />
-        <module name="facedews" />
-        <module name="dao" />
-        <module name="searchcriteria" />
+        <module name="daoapi" />
         <module name="service" />
+        <module name="dao" />
         <module name="facede-ws-api" />
+        <module name="facedewsapi" />
+        <module name="facedews" />
+        <module name="searchcriteria" />
         <module name="ear" />
+        <module name="service-api" />
         <module name="web" />
+        <module name="facede-ws" />
+        <module name="serviceapi" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="facadewsapi" target="1.5" />
+      <module name="fgfg" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

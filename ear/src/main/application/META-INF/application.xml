@@ -8,10 +8,19 @@
     </web>
   </module>
   <module>
+    <web>
+      <web-uri>facede-ws.war</web-uri>
+      <context-root>f</context-root>
+    </web>
+  </module>
+  <module>
     <ejb>service.jar</ejb>
   </module>
   <module>
     <java>dao.jar</java>
+  </module>
+  <module>
+    <java>facede-ws-api.jar</java>
   </module>
   <module>
     <java>service-api.jar</java>

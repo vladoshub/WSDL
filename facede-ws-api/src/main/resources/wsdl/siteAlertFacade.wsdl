@@ -38,13 +38,13 @@
     <binding name="FacadePortBinding" type="tns:Facade">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <operation name="addHuman">
-            <soap:operation soapAction="http://facadeapi.jaxrs.mmtr.ru/FacadeService/addHuman"/>
+            <soap:operation soapAction="http://facadeapi.jaxrs.mmtr.ru/f/FacadeService/addHuman"/>
             <input>
                 <soap:body use="literal"/>
             </input>
         </operation>
         <operation name="getHumanDto">
-            <soap:operation soapAction="http://facadeapi.jaxrs.mmtr.ru/FacadeService/addHuman"/>
+            <soap:operation soapAction="http://facadeapi.jaxrs.mmtr.ru/f/FacadeService/getHumanDto"/>
             <input>
                 <soap:body use="literal"/>
             </input>
@@ -57,7 +57,7 @@
 
     <service name="FacadeService">
         <port name="FacadePort" binding="tns:FacadePortBinding">
-            <soap:address location="http://localhost:8081/jaxrsNew/facedews/FacadeService"/>
+            <soap:address location="http://localhost:8081/f/FacadeService"/>
         </port>
     </service>
 

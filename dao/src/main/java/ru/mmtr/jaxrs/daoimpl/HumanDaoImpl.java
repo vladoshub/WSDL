@@ -2,6 +2,7 @@ package ru.mmtr.jaxrs.daoimpl;
 
 import ru.mmtr.jaxrs.api.HumanDao;
 import ru.mmtr.jaxrs.model.Human;
+import ru.mmtr.jaxrs.model.Human_;
 import ru.mmtr.jaxrs.searchcriteria.SearchCriteria;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -11,11 +12,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.persistence.metamodel.EmbeddableType;
-import javax.persistence.metamodel.EntityType;
-import javax.persistence.metamodel.ManagedType;
-import javax.persistence.metamodel.Metamodel;
-
 import java.util.List;
 
 @ApplicationScoped
@@ -65,14 +61,15 @@ public class HumanDaoImpl implements HumanDao {
 
     public Predicate getPredicate(SearchCriteria searchCriteria,CriteriaBuilder builder,Root<Human> root){
         Predicate where = builder.conjunction();
+        int a=4;
         if(searchCriteria.getName()!=null) {
-            where = builder.and(where,builder.like(root.get(Human_.name), searchCriteria.getName() + "%"));
+            where = builder.and(where,builder.like(root.<String>get(Human_.NAME), searchCriteria.getName() + "%"));
         }
         if(searchCriteria.getAge()!=null) {
-           where = builder.and(where,builder.equal(root.get(Human_.age),searchCriteria.getAge()));
+           where = builder.and(where,builder.equal(root.<Integer>get(Human_.AGE),searchCriteria.getAge()));
         }
         if(searchCriteria.getGrowth()!=null) {
-            where = builder.and(where,builder.equal(root.get(Human_.growth),searchCriteria.getGrowth()));
+            where = builder.and(where,builder.equal(root.<Integer>get(Human_.GROWTH),searchCriteria.getGrowth()));
         }
         return  where;
 
