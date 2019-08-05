@@ -1,0 +1,41 @@
+<xsd:schema xmlns:tns="http://webservice.jaxrs.mmtr.ru/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            version="1.0"
+            targetNamespace="http://webservice.jaxrs.mmtr.ru/">
+    <xsd:import namespace="http://webservice.jaxrs.mmtr.ru/" schemaLocation="../schema/schema.xsd"/>
+
+    <xsd:element name="getHumanDto">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element  name="criteriaSearch" type="tns:criteriaSearch"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="getHumanDtoResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="humanDtos" type="tns:humanDtoWs" maxOccurs="unbounded"
+                             nillable="true"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="addHuman">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element  name="humanDto" type="tns:humanDtoWs"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="addHumanResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="name" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:tns="http://webservice.jaxrs.mmtr.ru/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        targetNamespace="http://webservice.jaxrs.mmtr.ru/">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://webservice.jaxrs.mmtr.ru/"
+                        schemaLocation="../types/siteAlertTypeDefs.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="getHumanRequestRequest">
+        <part name="parameters" element="tns:getHumanDto"/>
+    </message>
+    <message name="getHumans">
+        <part name="parameters" element="tns:getHumanDtoResponse"/>
+    </message>
+
+    <message name="addHumanRequest">
+        <part name="parameters" element="tns:addHuman"/>
+    </message>
+
+
+
+
+    <portType name="Facade">
+        <operation name="addHuman">
+            <input message="tns:addHumanRequest"/>
+        </operation>
+        <operation name="getHumanDto">
+            <input message="tns:getHumanRequestRequest"/>
+            <output message="tns:getHumans"/>
+        </operation>
+    </portType>
+
+    <binding name="FacadePortBinding" type="tns:Facade">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="addHuman">
+            <soap:operation soapAction="http://webservice.jaxrs.mmtr.ru/FacadeService/addHuman"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+        <operation name="getHumanDto">
+            <soap:operation soapAction="http://webservice.jaxrs.mmtr.ru/FacadeService/addHuman"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+    </binding>
+
+    <service name="FacadeService">
+        <port name="FacadePort" binding="tns:FacadePortBinding">
+            <soap:address location="http://localhost:8081/jaxrsNew/facedews/FacadeService"/>
+        </port>
+    </service>
+
+</definitions>

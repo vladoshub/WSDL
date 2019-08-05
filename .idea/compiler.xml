@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <processor name="org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="serviceapi" />
+        <module name="facede-ws" />
+        <module name="facedewsapi" />
+        <module name="daoapi" />
+        <module name="dao-api" />
+        <module name="service-api" />
+        <module name="facedews" />
+        <module name="dao" />
+        <module name="searchcriteria" />
+        <module name="service" />
+        <module name="facede-ws-api" />
+        <module name="ear" />
+        <module name="web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="facadewsapi" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dao" options="" />
+      <module name="daoapi" options="" />
+      <module name="ear" options="" />
+      <module name="searchcriteria" options="" />
+      <module name="service" options="" />
+      <module name="serviceapi" options="" />
+      <module name="web" options="" />
+    </option>
+  </component>
+</project>
